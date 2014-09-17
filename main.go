@@ -9,8 +9,8 @@ import(
 func main() {
 
   slice := generateSlice(50)
-  fmt.Println("\n --- unsorted --- \n", slice)
-  fmt.Println("\n--- sorted ---\n", MergeSort(slice))
+  fmt.Println("\n --- unsorted --- \n\n", slice)
+  fmt.Println("\n--- sorted ---\n\n", MergeSort(slice))
 }
 
 // Generates a slice of size, size filled with random numbers
