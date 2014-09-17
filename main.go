@@ -19,11 +19,12 @@ func main() {
 
 // Generates a slice of size, size filled with random numbers
 func generateSlice(size int) []int {	
-	slice := make([]int, size, size)
+     slice := make([]int, size, size)
   rand.Seed(time.Now().UnixNano())
   for i := 0; i < size; i++ {
-      slice[i] := rand.Intn(99999) - rand.Intn(99999)
+      slice[i] = rand.Intn(99999) - rand.Intn(99999)
   }
+  return slice
 }
 
 // Runs MergeSort algorithm on a slice single
@@ -44,10 +45,10 @@ func Merge(left, right []int)[]int{
 	size := len(left) + len(right)
 	slice := make([]int, size, size)
 	
-	i := j := 0
+	i := 0
+	j := 0
 
 	for k := 0; k < size; k++ {
-	
 		if i > len(left)-1 && j <= len(right)-1{
 			slice[k] = right[j]
 			j++
