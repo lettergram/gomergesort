@@ -37,9 +37,8 @@ func MergeSort(slice []int) []int{
 // Merges left and right slice into newly created slice
 func Merge(left, right []int)[]int{
 	
-	size := len(left) + len(right)
+	size, i, j := len(left) + len(right), 0, 0
 	slice := make([]int, size, size)
-	i, j := 0
 
 	for k := 0; k < size; k++ {
 		if i > len(left)-1 && j <= len(right)-1{
