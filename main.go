@@ -9,17 +9,14 @@ import(
 func main() {
 
   slice := generateSlice(50)
-
-  fmt.Println("----- unsorted ------")
-  fmt.Println(slice)
-  fmt.Println("----- sorted -----")
-  fmt.Println(MergeSort(slice))
-  
+  fmt.Println("\n --- unsorted --- \n", slice)
+  fmt.Println("\n--- sorted ---\n", MergeSort(slice))
 }
 
 // Generates a slice of size, size filled with random numbers
 func generateSlice(size int) []int {	
-     slice := make([]int, size, size)
+
+  slice := make([]int, size, size)
   rand.Seed(time.Now().UnixNano())
   for i := 0; i < size; i++ {
       slice[i] = rand.Intn(99999) - rand.Intn(99999)
@@ -33,9 +30,7 @@ func MergeSort(slice []int) []int{
 	if len(slice) < 2{
 		return slice
 	}
-	
 	mid := (len(slice))/2
-
 	return Merge(MergeSort(slice[:mid]), MergeSort(slice[mid:]))
 }
 
@@ -44,9 +39,7 @@ func Merge(left, right []int)[]int{
 	
 	size := len(left) + len(right)
 	slice := make([]int, size, size)
-	
-	i := 0
-	j := 0
+	i, j := 0
 
 	for k := 0; k < size; k++ {
 		if i > len(left)-1 && j <= len(right)-1{
