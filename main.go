@@ -8,7 +8,6 @@ import(
 
 func main() {
 
-
   size := 50
 
   slice := make([]int, size, size)
